@@ -11,16 +11,9 @@ checkAttendance=$((RANDOM%2))
 
 if [ $checkAttendance -eq 0 ]
 then
-	echo "Employee is Present";
-else
-	echo "Employee is Absent";
-fi
-
-if [ $checkAttendance -eq 0 ]
-then
 	PerDaySalary=$(( perHrWage * hrsInDay ))
-	echo "$PerDaySalary"
+	echo "Employee is Present and Day Wage = $PerDaySalary";
 else
-	PerDaySalary=0
-	echo "$PerDaySalary"
+	PerDaySalary=0;
+	echo "Employee is Absent and Day Wage = $PerDaySalary";
 fi
