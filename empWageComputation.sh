@@ -9,8 +9,8 @@ hrsInDay=8;
 isPartTime=1;
 isFullTime=2;
 empRatePerHr=20;
-
-checkAttendance=$((RANDOM%2))
+empCheck=$((RANDOM%3));
+checkAttendance=$((RANDOM%2));
 
 if [ $checkAttendance -eq 0 ]
 then
@@ -33,3 +33,15 @@ else
 fi
 
 salary=$(( $empHrs * $empRatePerHr ));
+
+case $empCheck in 
+	$isFullTime)
+		empHrs=16 ;;
+	$isPartTime)
+		empHrs=8 ;;
+	*)
+		empHrs=0 ;;
+esac
+
+salary=$(($empHrs*$empRatePerHr));
+
