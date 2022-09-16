@@ -6,6 +6,9 @@ isPresent=0;
 isAbsent=1;
 perHrWage=20;
 hrsInDay=8;
+isPartTime=1;
+isFullTime=2;
+empRatePerHr=20;
 
 checkAttendance=$((RANDOM%2))
 
@@ -17,3 +20,16 @@ else
 	PerDaySalary=0;
 	echo "Employee is Absent and Day Wage = $PerDaySalary";
 fi
+
+randomCheck=$((RANDOM%3));
+if [ $isFullTime -eq $randomCheck ];
+then
+	empHrs=16;
+elif [ $isPartTime -eq $randomCheck ];
+then
+	empHrs=8;
+else
+	empHrs=0;
+fi
+
+salary=$(( $empHrs * $empRatePerHr ));
