@@ -34,7 +34,7 @@ fi
 
 salary=$(( $empHrs * $empRatePerHr ));
 
-case $empCheck in 
+case $empCheck in
 	$isFullTime)
 		empHrs=16 ;;
 	$isPartTime)
@@ -43,5 +43,6 @@ case $empCheck in
 		empHrs=0 ;;
 esac
 
-salary=$(($empHrs*$empRatePerHr));
+usingCaseSalary=$(($empHrs*$empRatePerHr));
 
+echo "Salary By Using Switch Case : $usingCaseSalary"
