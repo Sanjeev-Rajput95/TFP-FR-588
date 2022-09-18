@@ -43,6 +43,4 @@ case $empCheck in
 		empHrs=0 ;;
 esac
 
-usingCaseSalary=$(($empHrs*$empRatePerHr));
-
-echo "Salary By Using Switch Case : $usingCaseSalary"
+usingCaseSalary=$(($empHrs*$empRatePerHr ))
